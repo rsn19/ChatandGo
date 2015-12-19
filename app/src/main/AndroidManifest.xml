@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="miguel.chatgo">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".ChatGoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="LRcbCHIFBD5vL4M40rr9yIH4nmUhZ5yB9cNYYUL6" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="6V7fP7Adqw0JBbaKdLjcXdKnxY4pg2vvvvmSiVJy" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

@@ -54,6 +54,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sign_up_button_label"
         android:id="@+id/button2"
+        android:onClick="registrarse"
         android:layout_below="@+id/emailField"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
