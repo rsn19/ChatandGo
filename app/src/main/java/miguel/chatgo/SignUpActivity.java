@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -21,7 +24,8 @@ import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText usernameField, passwordField, emailField;
-    private ParseUser parseUser;
+    private ParseUser parseUser = new ParseUser();
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +34,17 @@ public class SignUpActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        parseUser= new ParseUser();
+
 
         usernameField = (EditText) findViewById(R.id.usernameField);
         passwordField = (EditText) findViewById(R.id.passwordField);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.INVISIBLE);
         emailField = (EditText) findViewById(R.id.emailField);
     }
 
     public void registrarse(View v) {
-        if(checkeoCampos()){
-            Toast.makeText(this, "Registro", Toast.LENGTH_LONG).show();
+        if (checkeoCampos()) {
             parseUser.setUsername(usernameField.getText().toString());
             parseUser.setPassword(passwordField.getText().toString());
             parseUser.setEmail(emailField.getText().toString());
@@ -47,16 +52,19 @@ public class SignUpActivity extends AppCompatActivity {
             parseUser.signUpInBackground(new SignUpCallback() {
                 @Override
                 public void done(ParseException e) {
-                    if(e==null) {
-                        Intent intent = new Intent(getApplication(),MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    progressBar.setVisibility(View.VISIBLE);
+                    if (e == null) {
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        //ActivityCompat.finishAffinity(SignUpActivity.this);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
-                    }else{
+                    } else {
                         generarDialogo(e.getMessage()).show();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 }
             });
-        }else{
+        } else {
             generarDialogo("Introduce los campos").show();
 
         }
@@ -64,10 +72,8 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     public boolean checkeoCampos() {
-        if (!usernameField.getText().toString().equals("") && !passwordField.getText().toString().equals("") && emailValidator(emailField.getText().toString()))
-            return true;
+        return !usernameField.getText().toString().equals("") && !passwordField.getText().toString().equals("") && emailValidator(emailField.getText().toString());
 
-        return false;
     }
 
 
