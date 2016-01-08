@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
     public boolean checkeoCampos() {
         if (!usernameField.getText().toString().equals("") && !passwordField.getText().toString().equals(""))
             return true;
-
         return false;
     }
 
@@ -71,9 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         builder.setMessage(error);
         builder.setTitle("Atención");
         builder.setCancelable(true);
-
         return builder.create();
-
     }
 
     public void signUpOnClick(View v){
