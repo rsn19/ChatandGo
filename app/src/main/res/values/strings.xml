@@ -5,6 +5,13 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
 
+    <!-- Valores de tabs -->
+    <string name="title_messages_tab">Mensajes</string>
+    <string name="title_friends_tab">Amigos</string>
+
+    <string name="empty_Inbox_Label">No hay nuevos mensajes</string>
+    <string name="empty_Friends_Label">Añade amigos para empezar</string>
+
 
     <string name="username_hint">Nombre de usuario</string>
     <string name="password_hint">Contraseña</string>
