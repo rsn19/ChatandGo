@@ -34,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().hide();
 
 
         usernameField = (EditText) findViewById(R.id.usernameField);

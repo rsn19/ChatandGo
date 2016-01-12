@@ -30,6 +30,9 @@ public class LoginActivity extends AppCompatActivity {
         passwordField = (EditText) findViewById(R.id.passwordField);
         progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
         progressBar.setVisibility(View.INVISIBLE);
+        getSupportActionBar().hide();
+
+
     }
 
     public void logearse(View v) {
