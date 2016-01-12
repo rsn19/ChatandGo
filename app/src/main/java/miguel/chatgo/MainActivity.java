@@ -102,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             return true;
+        }else if (id == R.id.openFriendsActivity){
+            Intent intent = new Intent(MainActivity.this,EditFriendsActivity.class);
+            startActivity(intent);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

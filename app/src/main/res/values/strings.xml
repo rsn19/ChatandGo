@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Chatgo</string>
+    <string name="app_name">GO chat</string>
+    <string name="app_subtitle">lorem ipsum</string>
+
     <string name="logout_menuItem">Log out</string>
+    <string name="friends_menuItem">Friends</string>
+
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
@@ -22,9 +26,11 @@
 
     <string name="Login_button_label">Ingresar</string>
     <string name="sign_up_button_label">Registrar</string>
+    <string name="title_activity_edit_friends">EditFriendsActivity</string>
 
+    <!-- Errores -->
 
-
+    <string name="editFriendsErrorTitle">Error en la carga de tus amigos, por favor inténtelo de nuevo.</string>
 
 
 </resources>
