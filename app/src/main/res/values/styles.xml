@@ -1,20 +1,115 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+    <!-- Customize your theme here. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
+        <item name="android:tabWidgetStyle">@android:style/Widget.TabWidget</item>
+    </style>-->
+
+    <!--Themes-->
+    <!--<style name="AppTheme" parent="@style/_PruebaMarrones"/>-->
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:tabWidgetStyle">@android:style/Widget.TabWidget</item></style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
+        <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AuthFieldContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_below">@dimen/activityVerticalMargin</item>
+        <item name="android:layout_marginTop">@dimen/activityVerticalMargin</item>
+        <item name="android:layout_marginLeft">@dimen/activityHorizontalMargin</item>
+        <item name="android:layout_marginRight">@dimen/activityHorizontalMargin</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">@dimen/loginHorizontalPadding</item>
+        <item name="android:paddingRight">@dimen/loginHorizontalPadding</item>
+        <item name="android:paddingTop">@dimen/loginVerticalPadding</item>
+        <item name="android:paddingBottom">@dimen/loginVerticalPadding</item>
+    </style>
+
+    <style name="titles">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">32dp</item>
+    </style>
+
+    <style name="EditTextAuthFieldContainer">
+        <item name="android:textColor">@color/colorPrimary20</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="EditTextPruebaMarrones" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/pruebamarrones_edit_text_holo_light</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="AutoCompleteTextViewPruebaMarrones" parent="android:Widget.AutoCompleteTextView">
+        <item name="android:dropDownSelector">@drawable/pruebamarrones_list_selector_holo_light</item>
+        <item name="android:background">@drawable/pruebamarrones_edit_text_holo_light</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="ButtonPruebaMarrones" parent="android:Widget.Button">
+        <item name="android:background">@drawable/pruebamarrones_btn_default_holo_light</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:minWidth">64dip</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="ImageButtonPruebaMarrones" parent="android:Widget.ImageButton">
+        <item name="android:background">@drawable/pruebamarrones_btn_default_holo_light</item>
+    </style>
+
+    <style name="authLayoutContainer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@color/colorPrimary20</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/title</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ButtonAuth">
+        <item name="android:background">@drawable/button_custom</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/authLayout</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+
+    </style>
+    <!--<item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+    <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>-->
 
 </resources>

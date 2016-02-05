@@ -3,17 +3,15 @@ package miguel.chatgo;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -26,6 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText usernameField, passwordField, emailField;
     private ParseUser parseUser = new ParseUser();
     private ProgressBar progressBar;
+    private Button mCancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +32,28 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().hide();
 
         usernameField = (EditText) findViewById(R.id.usernameField);
         passwordField = (EditText) findViewById(R.id.passwordField);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
+        progressBar.bringToFront();
         emailField = (EditText) findViewById(R.id.emailField);
+
+        Typeface font = Typeface.createFromAsset(getApplicationContext().getAssets(), "Lighthouse_PersonalUse.ttf");
+        usernameField.setTypeface(font);
+        passwordField.setTypeface(font);
+        emailField.setTypeface(font);
+
+
     }
 
+
+    public void terminar(View v){
+        finish();
+    }
     public void registrarse(View v) {
         if (checkeoCampos()) {
             parseUser.setUsername(usernameField.getText().toString());

@@ -3,34 +3,47 @@ package miguel.chatgo;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
-import android.support.v4.app.ActivityCompat;
+import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
-import com.parse.SignUpCallback;
 
 public class LoginActivity extends AppCompatActivity {
+
     private EditText usernameField, passwordField;
     private ProgressBar progressBar;
+    private TextView titleField,subtitleField;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        titleField = (TextView) findViewById(R.id.title);
+        subtitleField =(TextView) findViewById(R.id.subtitle);
         usernameField = (EditText) findViewById(R.id.usernameField);
         passwordField = (EditText) findViewById(R.id.passwordField);
         progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
         progressBar.setVisibility(View.INVISIBLE);
+        getSupportActionBar().hide();
+        Typeface font = Typeface.createFromAsset(getApplicationContext().getAssets(), "Lighthouse_PersonalUse.ttf");
+        titleField.setTypeface(font);
+        subtitleField.setTypeface(font);
+        usernameField.setTypeface(font);
+        passwordField.setTypeface(font);
+
+
     }
+
+
 
     public void logearse(View v) {
         if(checkeoCampos()){

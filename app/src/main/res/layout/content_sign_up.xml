@@ -4,68 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimaryDark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="miguel.chatgo.SignUpActivity"
     tools:showIn="@layout/activity_sign_up">
 
-    <EditText
+    <TextView
+        style="@style/titles"
+        android:text="@string/signupTitle"
+        android:textSize="48sp"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/Subtitle"
+        android:text="@string/signupSubtitle"
+        android:id="@+id/subtitle"
+         />
+    <RelativeLayout
+        android:id="@+id/authLayoutContainer"
+        android:layout_below="@+id/subtitle"
+        style="@style/authLayoutContainer">
+    <LinearLayout
+        style="@style/AuthFieldContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/usernameField"
-        android:hint="@string/username_hint"
-        android:layout_alignParentTop="true"
+        android:id="@+id/authLayout"
+        android:layout_marginTop="15dp"
+
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentEnd="true">
+        <EditText
+            style="@style/EditTextAuthFieldContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernameField"
+            android:hint="@string/username_hint"
+            />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/passwordField"
-        android:hint="@string/password_hint"
-        android:layout_below="@+id/usernameField"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/usernameField"
-        android:layout_alignEnd="@+id/usernameField" />
+        <EditText
+            style="@style/EditTextAuthFieldContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/passwordField"
+            android:hint="@string/password_hint"
+            />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/emailField"
-        android:hint="@string/email_hint"
-        android:layout_below="@+id/passwordField"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/passwordField"
-        android:layout_alignEnd="@+id/passwordField" />
-
+        <EditText
+            style="@style/EditTextAuthFieldContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/emailField"
+            android:hint="@string/email_hint"
+            />
+    </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDivider"
+            android:visibility="invisible"
+            android:src="@drawable/button_divider"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/authLayout"
+            />
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ButtonAuth"
         android:text="@string/sign_up_button_label"
-        android:id="@+id/button2"
+        android:id="@+id/actionButton"
         android:onClick="registrarse"
-        android:layout_below="@+id/emailField"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/emailField"
-        android:layout_alignEnd="@+id/emailField" />
+        android:layout_toRightOf="@id/buttonDivider"
+        android:layout_toEndOf="@id/buttonDivider"
+        android:layout_alignRight="@+id/authLayout"
+        android:layout_alignEnd="@+id/authLayout" />
+
+        <Button
+            style="@style/ButtonAuth"
+            android:text="@string/buttonCancel"
+            android:id="@+id/buttonCancel"
+            android:onClick="terminar"
+            android:layout_toLeftOf="@id/buttonDivider"
+            android:layout_toStartOf="@id/buttonDivider"
+            android:layout_alignLeft="@+id/authLayout"
+            android:layout_alignStart="@+id/authLayout" />
+
+
+    </RelativeLayout>
 
     <ProgressBar
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/authLayoutContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
+
+
 </RelativeLayout>

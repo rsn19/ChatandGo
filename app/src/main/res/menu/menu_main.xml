@@ -7,5 +7,16 @@
         android:id="@+id/logOut"
         android:orderInCategory="1"
         android:title="@string/logout_menuItem"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/openFriendsActivity"
+        android:orderInCategory="1"
+        android:title="@string/friends_menuItem"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_camera"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_camera_alt_24dp"
+        android:title="@string/menu_camera_label"
         app:showAsAction="ifRoom" />
 </menu>
