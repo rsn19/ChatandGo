@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="miguel.chatgo.LoginActivity">
+    <!--android:background="@drawable/background_fill"-->
+    <!--android:src="@drawable/backgroundgochat"-->
+    <!--<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/backgroundImage"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitStart"
+        android:contentDescription="logoChat"/>-->
+
+    <TextView
+        style="@style/titles"
+        android:text="@string/app_name"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/Subtitle"
+        android:text="@string/app_subtitle"
+        android:id="@+id/subtitle"
+         />
+
+    <RelativeLayout
+        android:id="@+id/authLayoutContainer"
+        android:layout_below="@+id/subtitle"
+        style="@style/authLayoutContainer">
+
+        <LinearLayout
+            style="@style/AuthFieldContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/authLayout">
+            <EditText
+                style="@style/EditTextAuthFieldContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/usernameField"
+                android:hint="@string/username_hint"
+                 />
+
+            <EditText
+                style="@style/EditTextAuthFieldContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/passwordField"
+                android:hint="@string/password_hint"
+
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <Button
+        style="@style/ButtonAuth"
+        android:text="@string/Login_button_label"
+        android:id="@+id/actionButton"
+        android:onClick="logearse"
+        android:layout_alignTop="@+id/progressBarLogin"
+        android:layout_alignLeft="@+id/progressBarLogin"
+        android:layout_alignStart="@+id/progressBarLogin" />
+<!--
+ style="?android:attr/borderlessButtonStyle"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+ -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_text"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/signUpText"
+        android:onClick="signUpOnClick"
+        android:clickable="true"
+        android:layout_alignBottom="@+id/progressBarLogin"
+        android:layout_alignLeft="@+id/progressBarLogin"
+        android:layout_alignStart="@+id/progressBarLogin" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarLogin"
+        android:layout_below="@+id/authLayoutContainer"
+        android:layout_alignRight="@+id/subtitle"
+        android:layout_alignEnd="@+id/subtitle" />
+
+
+
+
+</RelativeLayout>

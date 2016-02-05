@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signupTitle">Sign up</string>
+    <string name="signupSubtitle">Step 1/1</string>
+    <string name="buttonCancel">Cancelar</string>
+</resources>
